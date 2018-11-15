@@ -1,0 +1,34 @@
+void setup(){
+
+pinMode(green, OUTPUT);
+pinMode(red, OUTPUT);
+pinMode(Ain, INPUT);
+}
+void loop(){
+data=analogRead(Ain);
+if(data>280){
+//rojo
+analogWrite(red, 255);
+analogWrite(green,0);
+}
+else if(data<280&&data>151){
+//naranja
+analogWrite(red,255);
+analogWrite(green,100);
+}
+else if(data<150&&data>71){
+//amarillo
+analogWrite(red,255);
+analogWrite(green,180);
+}
+else if(data<70&&data>31){
+//verde limon
+analogWrite(red,150);
+analogWrite(green,230);
+}
+else if(data<30){
+//verde
+analogWrite(red,0);
+analogWrite(green, 255);
+}
+}
